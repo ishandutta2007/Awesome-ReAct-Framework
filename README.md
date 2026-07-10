@@ -13,7 +13,8 @@ The implementation of unified reasoning and tool execution has transitioned from
 
 
 ```mermaid
-[Reasoning-Only Chains (CoT, 2022)] ───> [Prompt-Based ReAct Loops (2022)] ───> [Structured Function Protocols (MCP)] ───> [Native System 2 Loops (R1, Present)](Parametric Knowledge Blindness)         (Fragile Parsing / Infinite Loops)           (Standardized Tool Client Discovery)         (Compiler-Locked Sandbox Realities)
+flowchart LR
+    A["Reasoning-Only Chains (CoT, 2022) (Parametric Knowledge Blindness)"] --> B["Prompt-Based ReAct Loops (2022) (Fragile Parsing / Infinite Loops)"] --> C["Structured Function Protocols (MCP) (Standardized Tool Client Discovery)"] --> D["Native System 2 Loops (R1, Present) (Compiler-Locked Sandbox Realities)"]
 ```
 
 *   **The Un-grounded Parametric Chain Era (Chain-of-Thought Baseline, ~2022)**
@@ -57,7 +58,16 @@ To manage multi-path tree unrolling without hitting VRAM capacity limits, the ag
 
 
 ```mermaid
-Prefix Context Page Lock Matrix[Static System & Tool Prompt] ───> [Compute KV Cache Matrix Once] ───> [Lock Blocks in Paged VRAM]│▼[Update Local Policy] <─── [Evaluate Observation] <── [Execute Tool Code via MCP] <── [Generate Action Token]
+flowchart TB
+    subgraph Prefix Context Page Lock Matrix
+        A["Static System & Tool Prompt"]
+    end
+    A --> B["Compute KV Cache Matrix Once"]
+    B --> C["Lock Blocks in Paged VRAM"]
+    C --> D["Generate Action Token"]
+    D --> E["Execute Tool Code via MCP"]
+    E --> F["Evaluate Observation"]
+    F --> G["Update Local Policy"]
 ```
 
 
