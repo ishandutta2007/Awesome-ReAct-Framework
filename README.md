@@ -35,19 +35,19 @@ The implementation of unified reasoning and tool execution has transitioned from
 
 The ReAct framework has diverged into highly specialized agentic routing architectures designed to optimize tool access efficiency and multi-path lookahead search loops.
 
-### A. Vanilla ReAct (Thought-Action-Observation)
-*   **Mechanism:** Implements a direct, linear sequential loop. The model generates one discrete thought and one corresponding tool call per step, waiting synchronously for the environment to write an observation back to the context string before continuing.
-*   **Pros:** Highly interpretable and straightforward to implement for single-topic informational queries.
+- ### A. Vanilla ReAct (Thought-Action-Observation)
+	*   **Mechanism:** Implements a direct, linear sequential loop. The model generates one discrete thought and one corresponding tool call per step, waiting synchronously for the environment to write an observation back to the context string before continuing.
+	*   **Pros:** Highly interpretable and straightforward to implement for single-topic informational queries.
 
-### B. Reflexion (Self-Reflective ReAct Loops)
-*   **Mechanism:** Appends an explicit **Self-Reflection memory buffer layer** to the ReAct pipeline. If an agent completes a multi-step tool sequence but fails to satisfy the user's targeted evaluation test, a separate evaluation prompt forces the model to analyze its error log, caching the critique inside a short-term memory vector to guide its next attempt.
-*   **Pros:** Minimizes repetitive infinite looping by forcing the model to learn from its immediate past failures.
+- ### B. Reflexion (Self-Reflective ReAct Loops)
+	*   **Mechanism:** Appends an explicit **Self-Reflection memory buffer layer** to the ReAct pipeline. If an agent completes a multi-step tool sequence but fails to satisfy the user's targeted evaluation test, a separate evaluation prompt forces the model to analyze its error log, caching the critique inside a short-term memory vector to guide its next attempt.
+	*   **Pros:** Minimizes repetitive infinite looping by forcing the model to learn from its immediate past failures.
 
-### C. Plan-and-Solve / Tree-of-Agents
-*   **Mechanism:** Modifies the execution matrix to handle complex, long-horizon tasks. Instead of jumping directly into small, step-by-step thoughts, the model generates a comprehensive macro-architectural execution plan upfront, dynamically spawning a collection of specialized sub-agents to execute different tool paths in parallel.
+- ### C. Plan-and-Solve / Tree-of-Agents
+	*   **Mechanism:** Modifies the execution matrix to handle complex, long-horizon tasks. Instead of jumping directly into small, step-by-step thoughts, the model generates a comprehensive macro-architectural execution plan upfront, dynamically spawning a collection of specialized sub-agents to execute different tool paths in parallel.
 
-### D. Reinforcement-Learned Verifiable ReAct (RLVR Integration)
-*   **Mechanism:** The absolute standard underpining advanced coding and math models [INDEX: 17]. The model writes executable code scripts and dispatches them straight to sandboxed containers [INDEX: 12, 17]. The backpropagation engine is hardwired to evaluate the compiler logs; the agent earns a positive optimization gradient strictly if its code passes all test specifications cleanly [INDEX: 17].
+- ### D. Reinforcement-Learned Verifiable ReAct (RLVR Integration)
+	*   **Mechanism:** The absolute standard underpining advanced coding and math models [INDEX: 17]. The model writes executable code scripts and dispatches them straight to sandboxed containers [INDEX: 12, 17]. The backpropagation engine is hardwired to evaluate the compiler logs; the agent earns a positive optimization gradient strictly if its code passes all test specifications cleanly [INDEX: 17].
 
 ---
 
@@ -72,13 +72,13 @@ Prefix Context Page Lock Matrix[Static System & Tool Prompt] ───> [Compute
 
 Deploying and scaling complex ReAct pipelines across commercial enterprise structures introduces deep context window consumption constraints and critical data security risks [INDEX: 22].
 
-### The Context Inflation and VRAM Cache Satiation Crisis
-*   **The Problem:** Because ReAct agents append extensive system instructions, tool execution logs, JSON schemas, and multi-step error traces into the context window continuously, the active Key-Value attention cache expands exponentially [INDEX: 12, 22]. This rapidly saturates GPU High Bandwidth Memory, causing severe latency spikes and system-wide Out-of-Memory (OOM) crashes [INDEX: 22].
-*   **Mitigation:** Implementing **Multi-Head Latent Attention (MLA)** to compress active cached attention matrices into low-rank latent vectors [INDEX: 18], combined with **Hierarchical Parent-Child Chunking** to condense long observation logs [INDEX: 18].
+- ### The Context Inflation and VRAM Cache Satiation Crisis
+	*   **The Problem:** Because ReAct agents append extensive system instructions, tool execution logs, JSON schemas, and multi-step error traces into the context window continuously, the active Key-Value attention cache expands exponentially [INDEX: 12, 22]. This rapidly saturates GPU High Bandwidth Memory, causing severe latency spikes and system-wide Out-of-Memory (OOM) crashes [INDEX: 22].
+	*   **Mitigation:** Implementing **Multi-Head Latent Attention (MLA)** to compress active cached attention matrices into low-rank latent vectors [INDEX: 18], combined with **Hierarchical Parent-Child Chunking** to condense long observation logs [INDEX: 18].
 
-### The Context Contamination and Indirect Prompt Injection Threat
-*   **The Problem:** As ReAct agents gain autonomous tool-calling privileges (browsing web pages, reading customer emails, parsing files), they become highly vulnerable to **Indirect Prompt Injection** [INDEX: 12, 19]. An attacker can hide stealthy, natural language instructions inside a third-party document; when the agent reads the text to fulfill a task, the payload overrides the model's internal system guardrails, hijacking its function-calling privileges to exfiltrate private corporate databases silently [INDEX: 12, 19].
-*   **Mitigation:** Bypassing surface-level prompt boundaries by deploying overcomplete **Sparse Autoencoders (SAEs)** [INDEX: 2]. SAEs isolate abstract conceptual directions into distinct monosemantic feature channels [INDEX: 2], letting trust and safety modules precisely inject negative activation steering vectors at runtime to neutralize authentic hazards without inducing collateral feature degradation [INDEX: 2].
+- ### The Context Contamination and Indirect Prompt Injection Threat
+	*   **The Problem:** As ReAct agents gain autonomous tool-calling privileges (browsing web pages, reading customer emails, parsing files), they become highly vulnerable to **Indirect Prompt Injection** [INDEX: 12, 19]. An attacker can hide stealthy, natural language instructions inside a third-party document; when the agent reads the text to fulfill a task, the payload overrides the model's internal system guardrails, hijacking its function-calling privileges to exfiltrate private corporate databases silently [INDEX: 12, 19].
+	*   **Mitigation:** Bypassing surface-level prompt boundaries by deploying overcomplete **Sparse Autoencoders (SAEs)** [INDEX: 2]. SAEs isolate abstract conceptual directions into distinct monosemantic feature channels [INDEX: 2], letting trust and safety modules precisely inject negative activation steering vectors at runtime to neutralize authentic hazards without inducing collateral feature degradation [INDEX: 2].
 
 ---
 
