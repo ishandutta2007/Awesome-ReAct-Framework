@@ -117,5 +117,13 @@ Before updating this documentation repository layout, let me know how you would 
 * I can generate a **Markdown matrix table** tracking the default context boundaries, exemplar capacities, and structural pooling layers of the leading foundation open-weight reasoning models [INDEX: 15, 21].
 * I can write a detailed technical explanation focusing on **how to train Process-Supervised Reward Models (PRMs)** to accurately identify the exact token step where an active generation pass breaks its targeted tool schema constraints [INDEX: 12, 16].
 
-
-
+##  Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-ReAct-Framework&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-ReAct-Framework&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-ReAct-Framework&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-ReAct-Framework&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
