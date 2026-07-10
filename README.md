@@ -1,5 +1,9 @@
-# Awesome-ReAct-Framework
-## ReAct (Reasoning + Acting) Framework: History, Progression, Variants, & Applications
+# 🚀 Awesome-ReAct-Framework
+<div align="center">
+  <img src="assets/banner.svg" alt="Awesome ReAct Framework Banner" width="100%" />
+</div>
+
+## 🧠 ReAct (Reasoning + Acting) Framework: History, Progression, Variants, & Applications
 
 The **ReAct (Reasoning + Acting)** framework is a foundational architectural design and prompt-engineering paradigm that enables Large Language Models (LLMs) to seamlessly interleave abstract reasoning traces with concrete, real-world tool execution [INDEX: 12]. Introduced by Yao et al. (Google Research / Princeton) in late 2022 ("ReAct: Synergizing Reasoning and Acting in Language Models"), the framework directly resolved a major structural dichotomy in artificial intelligence [INDEX: 12].
 
@@ -7,7 +11,7 @@ Prior to ReAct, AI agents were split into **Acting-Only Loops** (which interacte
 
 ---
 
-## 1. The Macro Chronological Evolution
+## 📜 1. The Macro Chronological Evolution
 
 The implementation of unified reasoning and tool execution has transitioned from loose prompt-engineered text wrappers to structured tool protocols, native reinforcement-learned traces, and multi-agent execution enclaves.
 
@@ -26,7 +30,7 @@ flowchart LR
 
 ---
 
-## 2. Core Functional & Algorithmic ReAct Variants
+## 🛠️ 2. Core Functional & Algorithmic ReAct Variants
 
 The ReAct framework has diverged into highly specialized agentic routing architectures designed to optimize tool access efficiency and multi-path lookahead search loops.
 
@@ -39,7 +43,7 @@ The ReAct framework has diverged into highly specialized agentic routing archite
 
 ---
 
-## 3. The ReAct Tool-Calling & Caching Matrix
+## 🗄️ 3. The ReAct Tool-Calling & Caching Matrix
 
 To manage multi-path tree unrolling without hitting VRAM capacity limits, the agentic runtime engine utilizes optimized page-sharing and caching architectures [INDEX: 22].
 
@@ -65,7 +69,7 @@ flowchart TB
 
 ---
 
-## 4. Production Engineering Challenges & Hardening Mitigations
+## 🏭 4. Production Engineering Challenges & Hardening Mitigations
 
 Deploying and scaling complex ReAct pipelines across commercial enterprise structures introduces deep context window consumption constraints and critical data security risks [INDEX: 22].
 
@@ -76,7 +80,7 @@ Deploying and scaling complex ReAct pipelines across commercial enterprise struc
 
 ---
 
-## 5. Frontier Real-World AI Industrial Applications
+## 🌐 5. Frontier Real-World AI Industrial Applications
 
 | Application | Description | Year | Paper Link | Details |
 | :--- | :--- | :--- | :--- | :--- |
@@ -86,7 +90,7 @@ Deploying and scaling complex ReAct pipelines across commercial enterprise struc
 
 ---
 
-## References
+## 📚 References
 1. Wei, J., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems (NeurIPS)*, 35, 24824-24837 [INDEX: 1].
 2. Yao, S., et al. (2022). ReAct: Synergizing reasoning and acting in language models. *arXiv preprint arXiv:2210.03629* [INDEX: 12].
 3. Shinn, N., et al. (2023). Reflexion: Language agents with systematic self-reflective learning loops. *arXiv preprint arXiv:2303.11366*.
